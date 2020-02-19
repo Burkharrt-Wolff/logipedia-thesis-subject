@@ -1,0 +1,30 @@
+#  Personal resource file for ChkTeX.
+
+# The default chktexrc file can be found here:
+# $TEXDIR/texmf-dist/chktex/chktexrc
+
+#####################################################################
+#
+# Here, you can put default commandline options; most users would for
+# instance like to put -v2 here.
+#
+
+CmdLine
+{
+  # Disable specific warnings using --nowarn option.
+  # See:
+  # https://www.reddit.com/r/LaTeX/comments/2synq8/
+  # how_do_i_suppress_warnings_from_chktex/
+  #
+  # As this document is composed in french,
+  # space in front of punctuation is typographically correct,
+  # hence I disable the related chktex warning.
+  #
+  # Warning 26: You ought to remove spaces
+  #             in front of punctuation.
+  #   This warning is issued if ChkTEX finds space
+  #   in front of an end-of-sentence character.
+  # See chktex documentation file ChkTeX.pdf,
+  # v1.7.6, September 16, 2016, section 7, page 19.
+  --nowarn 26
+}

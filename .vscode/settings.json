@@ -1,0 +1,54 @@
+{
+  "cSpell.allowCompoundWords": true,
+  "cSpell.ignorePaths": [
+    "*.alt"
+  ],
+  "cSpell.language": "en, en-gb, fr",
+  "cSpell.maxNumberOfProblems": 1000,
+  "files.associations": {
+    "latexmkrc": "perl"
+  },
+  // "latex-workshop.latex.external.build.command": "make",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "make",
+      "tools": [
+        "make"
+      ]
+    },
+    {
+      "name": "make clean",
+      "tools": [
+        "make clean"
+      ]
+    },
+    {
+      "name": "make clean-all",
+      "tools": [
+        "make clean-all"
+      ]
+    },
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "make",
+      "command": "make",
+    },
+    {
+      "name": "make clean",
+      "command": "make",
+      "args": [
+        "clean"
+      ],
+      "env": {}
+    },
+    {
+      "name": "make clean-all",
+      "command": "make",
+      "args": [
+        "clean-all"
+      ],
+      "env": {}
+    }
+  ],
+}

@@ -1,0 +1,21 @@
+// To configure cspell, see:
+// https://github.com/streetsidesoftware/vscode-spell-checker/
+// blob/master/packages/client/README.md
+{
+  "dictionaryDefinitions": [
+    {
+      "name": "thesisTerms",
+      "file": "./dictionaries/thesis_terms"
+    }
+  ],
+  "languageSettings": [
+    {
+      "languageId": "latex",
+      "dictionaries": [
+        "thesisTerms"
+      ],
+      "caseSensitive": true
+    }
+  ],
+  "ignoreWords": []
+}

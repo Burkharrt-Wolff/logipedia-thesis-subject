@@ -1,0 +1,132 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{url,french}
+
+\sloppy
+
+\begin{document}
+
+\title{\textbf{Proposition de Thèse Paris-Saclay/LRI}}
+\author{Safouan Taha et Burkhart Wolff}
+\date{}
+
+\maketitle
+
+\subsection*{Titre~:}
+\begin{center}
+\large Vérification et Simulation des Comportements pour la Sûreté \\
+  de Fonctionnement des Systèmes Autonomes Critiques
+\end{center}
+
+\subsection*{Sujet~:}
+Les systèmes autonomes ont la particularité d'être soumis,
+en plus des défaillances physiques classiques,
+à des erreurs relevant d'interactions avec l'environnement
+ou du traitement des données
+(par exemple, l'éblouissement ou une mauvaise reconnaissance de forme).
+
+Dans de tels environnements hostiles et difficiles à modéliser,
+on s'intéresse à des \emph{modèles de comportement}
+dans lesquels le système est censé assurer des propriétés de sécurité
+malgré la présence de données erronées ou imprécises.
+La norme ISO SOTIF \cite{iso-2019-sotif} introduit
+une classification de scénarios en plusieurs catégories,
+\emph{known safe}, \emph{known unsafe}, \emph{unknown safe}
+et \emph{unknown unsafe}, selon que le scénario est connu
+lors de la conception du système ou bien découvert lors de la phase de test
+et selon que le scénario ne déstabilise pas le système
+ou bien provoque sa défaillance.
+
+L'objectif de cette thèse est de trouver des modèles comportementaux
+qui sont suffisamment flexibles et \emph{open world} pour prendre en compte
+des scénarios \emph{known unsafe} et \emph{unknown unsafe}.
+
+Une théorie de référence pour étudier les modèles comportementaux est
+\emph{Concurrent Sequential Processes} (CSP)
+qui a été introduite dans un livre en 1978
+par Tony Hoare \cite{Hoare:1985:CSP:3921},
+et qui a évolué de manière substantielle
+entre-temps \cite{BrookesHR84,brookes-roscoe85,roscoe:csp:1998}.
+CSP décrit le non-déterminisme, la communication
+et la synchronisation avec un ensemble minimal d'opérateurs
+et un ensemble des règles.
+CSP offre à la fois un cadre d'étude théorique,
+un langage de modélisation de comportement,
+et un framework de vérification et simulation
+via une implémentation des processus par des automates.
+Les processus CSP sont ainsi décrits dans un modèle abstrait
+avec une grande \emph{expressivité} et conçu pour être \emph{compositionnels}.
+
+Isabelle/HOL-CSP \cite{HOL-CSP-AFP} est une théorie générale de CSP
+implémentée dans l'environnement de modélisation et de preuve
+Isabelle/HOL \cite{nipkow.ea:isabelle:2002}.
+Isabelle/HOL-CSP permet entre autres d'exprimer :
+%
+\begin{itemize}
+  \item
+    des non-déterminismes non-bornés
+    (ce qui correspond aux scénarios \emph{known unsafe}) ;
+  \item
+    une hiérarchisation des événements \emph{open-world}
+    (ce qui correspond aux scénarios \emph{unknown unsafe}) ;
+  \item
+    des patrons de processus (ce qui correspond au \emph{known unsafe})\ldots
+\end{itemize}
+%
+dans un cadre permettant modélisation, simulation et preuve.
+En particulier, il permet de prouver de manière incrémentale des propriétés
+sur des environnements avec une grande variabilité
+et de vérifier la correction des processus par raffinement.
+
+\subsection*{Objectifs~:}
+\begin{itemize}
+  \item
+    Étude des modèles \emph{open world} d'environnements liés
+    au domaine du Véhicule Autonome,
+    ainsi que des patrons des systèmes de contrôle du Véhicule Autonome ;
+\item
+  Construction d'un environnement de simulation et de vérification
+  à base de processus HOL-CSP pour le domaine du Véhicule Autonome ;
+\item
+  Construction d'un environnement de simulation
+  à base d'abstractions correctes des comportements en HOL-CSP ;
+\item
+  Intégration de l'environnement résultant
+  avec le système d'ingénierie AltaRica ou similaire.
+\end{itemize}
+
+\subsection*{Plan de Travail~:}
+\begin{itemize}
+  \item
+    Modélisation des patrons \emph{open world}
+    d'environnement du Véhicule Autonome ;
+  \item
+    Modélisation des patrons \emph{open world}
+    des systèmes de contrôle du Véhicule Autonome ;
+  \item
+    Développement d'un système de transformation
+    des processus CSP en Automates ;
+  \item
+    Développement d'un système de simulation des processus CSP
+    et leur intégration dans un framework similaire à AltaRica ;
+  \item
+    Développement d'un dispositif d'abstraction des processus
+    à partir des ontologies du domaine.
+\end{itemize}
+
+\subsection*{Cadre d'organisation~:}
+Encadrement dans le laboratoire de recherche en informatique (LRI)
+dans l'équipe VALS\@.
+Directeur Prof.\ B. Wolff (HDR), Co-encadrement : Dr.\ Safouan Taha.
+Financement de Thèse: SystemX suivant la convention.
+On note que l'équipe VALS va être transférée
+dans le nouveau laboratoire LMF (également Université Paris-Saclay)
+pendant la durée de la thèse ;
+on estime que ce transfert de l'organisation n'aura aucun impact
+sur le déroulement de la thèse et les engagements contractuels.
+
+\bibliographystyle{unsrt}
+\bibliography{biblio}
+
+\end{document}
