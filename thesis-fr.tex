@@ -43,15 +43,21 @@ pour cette tendance.
 Le projet europeen \emph(Logipedia}\cite{XXX}, a base d'un language de preuve formelle Dedukti\cite{XXX}, vise a definir une lingua franca pour échanger des termes,
 preuves et theories de ces differentes bibliotheques et de prevoir des mechanismes de fouille avancés dans ces bibliothèques combineés. 
 
-For both --- combination of "mathematical content" generated from different proof systems as well as advanced, pdomain-specific search technologies ---
-the construction of a flexible mechanism to specify and manage meta-data is fundamental importance. Since the precise structure of meta-data will evolve over time, a \emph{language} and a \emph{framework to enforce} the validity of meta-data is required. For such languages, the term 
-\emph{ontology} has been established in semantic web communities, and there are plethora of approaches and languages ranging from 
-validations of \verb*dtd*'s over XML documents to languages such as OWL \cite{}. 
+For both --- the combination of "mathematical content" generated from different proof systems as well as advanced, domain-specific 
+search technologies --- the construction of a flexible mechanism to specify and manage meta-data is fundamental importance. Since 
+the precise structure of meta-data will evolve over time, a \emph{language} and a \emph{framework to enforce} the validity of meta-data 
+is required. For such languages, the term  \emph{ontology} has been established in semantic web communities[3], and there are plethora 
+of approaches and languages ranging from  validations of \verb*dtd*'s over XML documents to languages such as OWL \cite{}. 
 
 However, enforcing a structure in a general document is different from stucture in mathematical libraries consisting of formal proofs.
-is done by annotations with meta-information; the language in which the latter is defined is widely called a document ontology (an equivalent term is vocabulary) in the semantic web community [3], i.e., a machine-readable form of the structure of a document and the document dis- course. Let us consider a set of text elements available in a given corpus. These elements may be sentences or paragraphs, figures, tables, definitions or lemmas, code, and, for example, the results of test-executions.
+While done by annotations with meta-information, these annotations are a machine-readable form of the structure of proofs and theories 
+in terms of  an ontological discourse. Ontologies in this context must be strongly typed languages with mechanisms to reference and agglomerate  
+definitions, data-structure elements, rules and rule-types (induction/co-induction), proof-methods, lemmas and proof-elements, etcpp.
+With respect to search, it is moreover relevant to specify \emph{domain-specific} mathematical meta-knowledge in order to allow requests 
+like "which theorems here are relevant for sampling analogous signals" or "which part of the linear algebra libraries is relevant for
+specifying the amount of 'blur' in a digital image" ?
 
-MORE TO COME
+MORE TO COME: Isabelle/DOF is a first language of this type. 
 ... 
 
 \subsection*{Objectifs~:}
@@ -59,45 +65,32 @@ MORE TO COME
 TODO
 
 \begin{itemize}
-  \item
-    Étude des modèles \emph{open world} d'environnements liés
-    au domaine du Véhicule Autonome,
-    ainsi que des patrons des systèmes de contrôle du Véhicule Autonome ;
 \item
-  Construction d'un environnement de simulation et de vérification
-  à base de processus HOL-CSP pour le domaine du Véhicule Autonome ;
+  Porting Isabelle/DOF to Dedukti
 \item
-  Construction d'un environnement de simulation
-  à base d'abstractions correctes des comportements en HOL-CSP ;
+  Developping onto libraries for proof exchanges
 \item
-  Intégration de l'environnement résultant
-  avec le système d'ingénierie AltaRica ou similaire.
+  Developing onto libraries for domain-specific search use
+\item
+  Developping a framework of semantic links of ontologies via proofs.
 \end{itemize}
 
 \subsection*{Plan de Travail~:}
 \begin{itemize}
   \item
     Modélisation des patrons \emph{open world}
-    d'environnement du Véhicule Autonome ;
   \item
     Modélisation des patrons \emph{open world}
-    des systèmes de contrôle du Véhicule Autonome ;
   \item
     Développement d'un système de transformation
-    des processus CSP en Automates ;
-  \item
-    Développement d'un système de simulation des processus CSP
-    et leur intégration dans un framework similaire à AltaRica ;
-  \item
-    Développement d'un dispositif d'abstraction des processus
-    à partir des ontologies du domaine.
+  \item :...
 \end{itemize}
 
 \subsection*{Cadre d'organisation~:}
 Encadrement dans le laboratoire de recherche en informatique (LRI)
 dans l'équipe VALS\@.
-Directeur Prof.\ B. Wolff (HDR), Co-encadrement : Dr.\ Safouan Taha.
-Financement de Thèse: SystemX suivant la convention.
+Directeur Prof.\ B. Wolff (HDR), Co-encadrement : Dr.\ Idir Ait-Sadune.
+Financement de Thèse: EU Projet Logipedia.
 On note que l'équipe VALS va être transférée
 dans le nouveau laboratoire LMF (également Université Paris-Saclay)
 pendant la durée de la thèse ;
@@ -105,6 +98,6 @@ on estime que ce transfert de l'organisation n'aura aucun impact
 sur le déroulement de la thèse et les engagements contractuels.
 
 \bibliographystyle{unsrt}
-\bibliography{biblio}
+\bibliography{biblio,local}
 
 \end{document}
