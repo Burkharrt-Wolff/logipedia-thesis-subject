@@ -15,7 +15,8 @@
 
 \subsection*{Titre~:}
 \begin{center}
-\large An Ontology Framework for Formal Mathematical Libraries
+\large An Ontology Framework for Formal Libraries \\
+          Conception et Implémentation d'une Language d'Ontologie pour des Librairies Formelles
 \end{center}
 
 
@@ -31,70 +32,98 @@
 % techniques allow a deeper checking of documents containing formal spec- ifications, proofs and tests. This paves the way for collaborative, continuously 
 % machine-checked developments of certification documents involving both formal as well of informal content evolution.
 
-\subsection*{Sujet~:}
-Avec la maturation et la puissance croissante des systèmes de preuve interactifs, le corps des mathématiques et de l'ingénierie formelles s'est augmente 
-de manière considérable. Un example pour cette tendence sont les 
-archives d'Isabelle \cite{} de la preuve formelle (AFP) [6]: Créés en 2004, ils comptaient en 2015 215 articles au total, contre 413 seulement trois ans plus tard. 
-%Une analyse empirique approfondie montre que la complexité et la taille ont augmenté en conséquence [11]. 
-En collaboration avec l'AFP, il existe également un nombre croissant d'articles sur les questions formelles d'ingénierie logicielle telles que les définitions de langue normalisées (par exemple, [15, 21]), les structures de données ([14, 24]), des processeurs (par exemple, [20]), les spécifications liées à la sécurité ([13,26]) ou des systèmes d'exploitation (par exemple, [22,27]). Des systemes comme MMT\cite{XXX}, Openmath\cite{XXX} et Logipedia \cite{XXX} representent autres examples
+\subsection{Keywords}
+Ontologies - Semantic Web - Formal Theories - Interactive Proof Development - Formal Program Development - Access to Formal Knowledge
+
+\subsection*{Detailed Thesis Overview}
+With the maturation and growing power of interactive proof systems, the body of formalised mathematics and engineering is dramatically increasing.
+This  challenge incites numerous research efforts summarised under the labels “semantic web”, “data mining”, or any form of advanced “semantic” text processing. A key role in structuring this linking play document ontologies, i.e., a machine-readable form of the structure of documents as well as the document discourse. In many scientific disciplines such es medicine or biology, ontologies play a crucial role in the organisation of research
+papers and their automated access.
+
+While it is desirable to have analogous techniques in the field of mathematics and engineering, there are particular challenges in this the field:
+this type of documents contain both formal and informal text-elements with a complex structure of mutual links and dependencies of
+various types. A deeper access into the formal parts of this type of documents involves a framework that can cope with typed, logical languages,
+which requires to go substantially further than existing ontological languages like, for example, OWL or R\cite{owl2012,protege,owlgred,rontorium}. 
+
+A first approach for the class of ontological languages addressing this challenge both for mathematical as well as formal engineering texts is
+Isabelle\_DOF \cite{Brucker-ea.Using-CICM18,BruckerWolff.Design-SEFM19,BruckerWolff.Certif-IFM19}. Deeply integrated into the interactive theorem proving system Isabelle/HOL and its front-end \emph{PIDE}, it allows both the development of simply-typed ontologies as well as the documents containing definitions, documentation, and formal proofs. The ontologies provide structured meta-information and structural constraints which were enforced during document editing. However the current implementation is document-centric, i.e. it supports links to terms in definitions 
+and proofs, but not links between terms, and the addition of structured meta-information \emph{inside and between} formulas or proofs. However, these features are tantamount for a number of applications when it comes to the exchange of (semi-)formal information between interactive
+and automated provers on the one hand and to advanced "semantic", knowledge-oriented search techniques in theses documents.
+
+This thesis will overcome this limitation: A new language will be designed and implemented (possibly, but not necessarily based on Isabelle\_DOF),
+that will describe and enforce meta-information inside the level of terms and proof-objects. It is therefore designed to provide a "deeper"
+integration into formal mathematical library texts, enabling both tool interaction as well as knowledge-oriented access for advanced search
+in libraries such as the AFP, MMT, TheMizarJournal or Dedukti/Logipedia\cite{afp,mmt,TheMizarJournal,dedukti}. In particular, it is intended
+to coodinate this this with the Logipedia Initiative, which currently submitted an EU Research Funding Proposal 
+(project coordinators: Gilles Dowek, Frederic Blanqui).  
+
+\subsection*{Présentation détaillée du projet doctoral (fr)}
+Avec la maturation et la puissance croissante des systèmes de preuve interactifs, le corps des mathématiques et de l'ingénierie formelles augmente considérablement. Ce défi incite à de nombreux efforts de recherche résumés sous les étiquettes «Web sémantique», «exploration de données» ou toute autre forme de traitement de texte «sémantique» avancé. Un rôle clé dans la structuration de ce jeu de liens ontologie des documents, c'est-à-dire une forme lisible par machine de la structure des documents ainsi que du discours sur les documents. Dans de nombreuses disciplines scientifiques comme la médecine ou la biologie, les ontologies jouent un rôle crucial dans l'organisation de la recherche
+papiers et leur accès automatisé.
+
+S'il est souhaitable d'avoir des techniques analogues dans le domaine des mathématiques et de l'ingénierie, il existe des défis particuliers dans ce domaine: ce type de documents contient des éléments de texte formels et informels avec une structure complexe de liens mutuels et de dépendances
+divers types. Un accès plus approfondi aux parties formelles de ce type de documents implique un cadre capable de faire face à des langages logiques typés, ce qui nécessite d'aller beaucoup plus loin que les langages ontologiques existants comme, par exemple, OWL ou R 
+\cite {owl2012,protege,owlgred,rontorium}.
+
+Une première approche pour la classe des langages ontologiques abordant ce défi à la fois pour les textes d'ingénierie mathématiques et formels 
+est Isabelle\_DOF \cite{Brucker-ea.Using-CICM18, BruckerWolff.Design-SEFM19, BruckerWolff.Certif-IFM19}. Profondément intégré au système interactif de démonstration de théorèmes Isabelle/HOL et à son interface \emph{PIDE}, il permet à la fois le développement d'ontologies de type simple ainsi que les documents contenant des définitions, de la documentation et des preuves formelles. Les ontologies fournissent des méta-informations structurées et des contraintes structurelles qui ont été appliquées lors de l'édition des documents. Cependant, l'implémentation actuelle est centrée sur le document, c'est-à-dire qu'elle prend en charge les liens vers les termes dans les définitions
+et les preuves, mais pas les liens entre les termes, et l'ajout de méta-informations structurées \emph{à l'intérieur et entre} formules ou preuves. Cependant, ces fonctionnalités sont équivalentes à un certain nombre d'applications en ce qui concerne l'échange d'informations (semi-) formelles entre des et les prouveurs automatisés, d'une part, et les techniques avancées de recherche "sémantique", orientée connaissances, dans ces documents.
+
+Cette thèse surmontera cette limitation: un nouveau langage sera conçu et implémenté (éventuellement, mais pas nécessairement basé sur 
+Isabelle\_DOF),vqui décrira et appliquera les méta-informations à l'intérieur du niveau des termes et des objets de preuve. Il est donc conçu pour fournir une intégration "plus profonde" dans des textes de bibliothèque mathématique formels, permettant à la fois une interaction avec les outils et un accès axé sur les connaissances pour une recherche avancée dans des bibliothèques telles que AFP, MMT, TheMizarJournal ou Dedukti / Logipedia 
+\cite {afp,mmt,TheMizarJournal,dedukti}. En particulier, on a l'intention de le faire collaborer cela avec l'initiative Logipedia, qui vient d'être 
+soumis dans le cadre de H2020 comme project proposal (project coordinators: Gilles Dowek, Frederic Blanqui).
+
+\subsection*{Thématique}
+Le lien entre le formel et l'informel est peut-être le défi le plus répandu dans la numérisation des connaissances et leur propagation. Ce défi implique de nombreux efforts de recherche résumés sous les étiquettes «Web sémantique», «exploration de données» ou toute autre forme de traitement de texte «sémantique» avancé. Un rôle clé dans la structuration de ces ontologies de document de jeu de liaison (également appelé vocabulaire dans la communauté du web sémantique [3]), c'est-à-dire une forme lisible par machine de la structure des documents ainsi que du discours sur les documents. De telles ontologies peuvent être utilisées pour le discours scientifique dans les articles savants, les bibliothèques mathématiques et dans le discours d'ingénierie des documents normalisés de certification de logiciels.
+
+Avec la maturation et la puissance croissante des systèmes de preuve interactifs, le corps des mathématiques et de l'ingénierie formelles s'est augmente  de manière considérable. Un example pour cette tendance sont les  archives d'Isabelle \cite{afp} de la preuve formelle (AFP): Créés en 2004, ils comptaient en 2015 215 articles au total, contre 413 seulement trois ans plus tard. 
+Une analyse empirique approfondie montre que la complexité et la taille ont augmenté en conséquence \cite{DBLP:conf/mkm/BlanchetteHMN15}. 
+En collaboration avec l'AFP, il existe également un nombre croissant d'articles sur les questions formelles d'ingénierie logicielle telles que les définitions de langue normalisées, les structures de données, des processeurs, les spécifications liées à la sécurité  ou des systèmes d'exploitation. Des systèmes comme MMT\cite{mmt}, OpenMath\cite{openmath} et Dedukti \cite{dedukti} représentent autres examples
 pour cette tendance.
 
-Le projet europeen \emph{Logipedia}\cite{XXX}, a base d'un language de preuve formelle Dedukti\cite{XXX}, vise a definir une lingua franca pour échanger des termes,
-preuves et theories de ces differentes bibliotheques et de prevoir des mechanismes de fouille avancés dans ces bibliothèques combineés. 
+\subsection*{Domaine}
+Methodes Formelles --- Systemes de Preuve --- Mathematical Content Management --- Ontologies --- Domain-Specific Languages (DSL)
+pour l'organisation des connaissances formelles, fouilles "sémantiques" dans des libraries mathématiques.
 
-For both --- the combination of "mathematical content" generated from different proof systems as well as advanced, domain-specific 
-search technologies --- the construction of a flexible mechanism to specify and manage meta-data is fundamental importance. Since 
-the precise structure of meta-data will evolve over time, a \emph{language} and a \emph{framework to enforce} the validity of meta-data 
-is required. For such languages, the term  \emph{ontology} has been established in semantic web communities[3], and there are plethora 
-of approaches and languages ranging from  validations of \verb*dtd*'s over XML documents to languages such as OWL \cite{}. 
-
-However, enforcing a structure in a general document is different from stucture in mathematical libraries consisting of formal proofs.
-While done by annotations with meta-information, these annotations are a machine-readable form of the structure of proofs and theories 
-in terms of  an ontological discourse. Ontologies in this context must be strongly typed languages with mechanisms to reference and agglomerate  
-definitions, data-structure elements, rules and rule-types (induction/co-induction), proof-methods, lemmas and proof-elements, etcpp.
-With respect to search, it is moreover relevant to specify \emph{domain-specific} mathematical meta-knowledge in order to allow requests 
-like "which theorems here are relevant for sampling analogous signals" or "which part of the linear algebra libraries is relevant for
-specifying the amount of 'blur' in a digital image" ?
-
-MORE TO COME: Isabelle/DOF is a first language of this type. 
-... see SEFM Paper. 
-
-\subsection*{Objectifs~:}
-
-TODO
-
-\begin{itemize}
-\item
-  Porting Isabelle/DOF to Dedukti
-\item
-  Developping onto libraries for proof exchanges
-\item
-  Developing onto libraries for domain-specific Ontologies in Math and Engineerinfg
-\item
-  Developping a framework of semantic links of ontologies via proofs.
-\end{itemize}
-
-\subsection*{Plan de Travail~:}
-\begin{itemize}
-  \item
-    Modélisation des patrons \emph{open world}
-  \item
-    Modélisation des patrons \emph{open world}
-  \item
-    Développement d'un système de transformation
-  \item :...
-\end{itemize}
-
-\subsection*{Cadre d'organisation~:}
+\subsection*{Contexte}
 Encadrement dans le laboratoire de recherche en informatique (LRI)
 dans l'équipe VALS\@.
 Directeur Prof.\ B. Wolff (HDR), Co-encadrement : Dr.\ Idir Ait-Sadune.
-Financement de Thèse: EU Projet Logipedia.
+Financement de Thèse: Bourse Ministerielle ou EU Projet Logipedia.
+
 On note que l'équipe VALS va être transférée
 dans le nouveau laboratoire LMF (également Université Paris-Saclay)
 pendant la durée de la thèse ;
 on estime que ce transfert de l'organisation n'aura aucun impact
 sur le déroulement de la thèse et les engagements contractuels.
+
+Les encadrants Pr. B. Wolff (HDR) et Dr. Idir Ait Sadoune sont impliqués dans la domaine des ontologies pour des modèles / textes formelles 
+dans de multiples manières; B. Wolff est auteur du système Isabelle\_DOF, Idir Sadoune auteur de plusieurs publications dans la domaine 
+\cite{DBLP:conf/medi/Ait-SadouneM19}.
+
+Le projet européen \emph{Logipedia}, à base d'un language de preuve formelle Dedukti\cite{dedukti}, vise a définir une lingua franca 
+pour échanger des termes, preuves, theories et documentations entre différentes bibliothèques et de prévoir des mécanismes de 
+fouille avancés dans ces bibliothèques combinées. 
+
+\subsection*{Méthode}
+Implementation, développement de nouveau ontologies a base des des ontologies existantes.
+Etudes de Cas suivant le contexte (soit Genie Logiciel, soit Mathématique dans le contexte Logipedia.)
+
+\subsection*{Résultats attendus / Objectifs}
+
+\begin{itemize}
+\item Conception et Implementation d'un système comprenant une language et un mécanisme de validation
+  (soit par extension de Isabelle\_DOF ou par port vers le framework Dedukti)
+\item
+  Development des libraries d'ontologies pour le scenario "proof exchanges"
+\item
+  Developing des libraries d'ontologies de domaine pour le scenario "fouille"  dans des textes de Math and Genie Logiciel 
+  (par example une ontologie d'une Certification comme Critères Commun ou CENELEC.)
+\item Publications dans SEFM, IFM, FM, CICM, MKM.
+\end{itemize}
+
+Ceci représent aussi en gros le plan de travail.
 
 \bibliographystyle{unsrt}
 \bibliography{biblio,local}
